@@ -7,8 +7,6 @@ import io.spring.application.Page;
 import io.spring.core.article.Article;
 import io.spring.core.article.ArticleRepository;
 import io.spring.core.user.User;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -69,9 +67,7 @@ public class ArticlesApi {
     }
 }
 
-@Getter
 @JsonRootName("article")
-@NoArgsConstructor
 class NewArticleParam {
     @NotBlank(message = "can't be empty")
     private String title;
@@ -80,4 +76,20 @@ class NewArticleParam {
     @NotBlank(message = "can't be empty")
     private String body;
     private String[] tagList;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String[] getTagList() {
+        return tagList;
+    }
 }

@@ -1,20 +1,14 @@
 package io.spring.core.article;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
-@Getter
-@NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
 public class Article {
     private String userId;
     private String id;
@@ -25,6 +19,9 @@ public class Article {
     private List<Tag> tags;
     private Instant createdAt;
     private Instant updatedAt;
+
+    public Article() {
+    }
 
     public Article(String title, String description, String body, String[] tagList, String userId) {
         this(title, description, body, tagList, userId, Instant.now());
@@ -58,5 +55,54 @@ public class Article {
 
     private String toSlug(String title) {
         return title.toLowerCase().replaceAll("[\\&|[\\uFE30-\\uFFA0]|\\’|\\”|\\s\\?\\,\\.]+", "-");
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return Objects.equals(id, article.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

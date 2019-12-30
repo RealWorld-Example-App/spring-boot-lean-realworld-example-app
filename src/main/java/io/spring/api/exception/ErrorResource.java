@@ -8,12 +8,15 @@ import java.util.List;
 
 @JsonSerialize(using = ErrorResourceSerializer.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@lombok.Getter
 @JsonRootName("errors")
 public class ErrorResource {
     private List<FieldErrorResource> fieldErrors;
 
     public ErrorResource(List<FieldErrorResource> fieldErrorResources) {
         this.fieldErrors = fieldErrorResources;
+    }
+
+    public List<FieldErrorResource> getFieldErrors() {
+        return fieldErrors;
     }
 }

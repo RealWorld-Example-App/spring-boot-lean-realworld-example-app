@@ -1,14 +1,8 @@
 package io.spring.core.user;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+import java.util.Objects;
 import java.util.UUID;
 
-@Getter
-@NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
 public class User {
     private String id;
     private String email;
@@ -16,6 +10,9 @@ public class User {
     private String password;
     private String bio;
     private String image;
+
+    public User() {
+    }
 
     public User(String email, String username, String password, String bio, String image) {
         this.id = UUID.randomUUID().toString();
@@ -46,5 +43,42 @@ public class User {
         if (!"".equals(image)) {
             this.image = image;
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

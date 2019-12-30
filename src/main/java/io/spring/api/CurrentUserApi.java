@@ -7,8 +7,6 @@ import io.spring.application.data.UserData;
 import io.spring.application.data.UserWithToken;
 import io.spring.core.user.User;
 import io.spring.core.user.UserRepository;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -92,9 +90,7 @@ public class CurrentUserApi {
     }
 }
 
-@Getter
 @JsonRootName("user")
-@NoArgsConstructor
 class UpdateUserParam {
     @Email(message = "should be an email")
     private String email = "";
@@ -102,4 +98,24 @@ class UpdateUserParam {
     private String username = "";
     private String bio = "";
     private String image = "";
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getImage() {
+        return image;
+    }
 }

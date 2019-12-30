@@ -12,8 +12,6 @@ import io.spring.core.comment.Comment;
 import io.spring.core.comment.CommentRepository;
 import io.spring.core.service.AuthorizationService;
 import io.spring.core.user.User;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -91,10 +89,12 @@ public class CommentsApi {
     }
 }
 
-@Getter
-@NoArgsConstructor
 @JsonRootName("comment")
 class NewCommentParam {
     @NotBlank(message = "can't be empty")
     private String body;
+
+    public String getBody() {
+        return body;
+    }
 }
