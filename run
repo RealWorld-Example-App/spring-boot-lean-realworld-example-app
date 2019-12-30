@@ -1,2 +1,2 @@
 ./gradlew build
-java -jar build/libs/spring-boot-realworld-example-*.jar
+java -jar build/libs/*.jar

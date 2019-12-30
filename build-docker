@@ -1,1 +1,2 @@
-docker build -t integrational/spring-boot-realworld-example-app .
+app=spring-boot-lean-realworld-example-app
+docker build -t integrational/$app .
