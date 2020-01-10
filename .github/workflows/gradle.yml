@@ -12,10 +12,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Cache Gradle installation for gradle wrapper
-      uses: actions/cache@v1
-      with:
-        key: gradle-installation
-        path: ./.gradle
+#   - name: Cache Gradle installation for gradle wrapper
+#     uses: actions/cache@v1
+#     with:
+#       key: gradle-installation
+#       path: ./.gradle
     - name: Build with Gradle wrapper
       run: ./gradlew build
