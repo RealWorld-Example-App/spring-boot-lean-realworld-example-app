@@ -1,6 +1,8 @@
-# ![RealWorld Example App using Kotlin and Spring](example-logo.png)
+# ![RealWorld Example App using Spring Boot](example-logo.png)
 
-> ### Spring boot + MyBatis codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+> ### Spring Boot + MyBatis codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+
+![](https://github.com/RealWorld-Example-App/spring-boot-lean-realworld-example-app/workflows/Gradle%20Build/badge.svg)
 
 This codebase was created to demonstrate a fully fledged fullstack application built with Spring boot + Mybatis including CRUD operations, authentication, routing, pagination, and more.
 
@@ -8,7 +10,7 @@ For more information on how to this works with other frontends/backends, head ov
 
 # How it works
 
-The application uses Spring boot (Web, Mybatis).
+The application uses Spring Boot (Web, Mybatis).
 
 * Use the idea of Domain Driven Design to separate the business term and infrastruture term.
 * Use MyBatis to implement the [Data Mapper](https://martinfowler.com/eaaCatalog/dataMapper.html) pattern for persistence.
